@@ -1,14 +1,20 @@
 const { DataTypes, Model } = require('sequelize');
 const sequelize = require('../config/db');
-const Vehiculo = require('./Vehiculo.model');
+const Usuario = require('./Usuario.model');
+const Reserva = require('./Reserva.model');
 
-class Cliente extends Model {}
+class Cliente extends Model { }
 
 Cliente.init(
     {
-        usuario_id: {
+        id: {
             type: DataTypes.INTEGER,
-            allowNull: true,
+            primaryKey: true,
+            autoIncrement: true,
+        },
+        num_dni: {
+            type: DataTypes.INTEGER,
+            allowNull: true
         },
         nombre: {
             type: DataTypes.STRING,
@@ -18,13 +24,12 @@ Cliente.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        direccion: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
         telefono: {
             type: DataTypes.STRING,
             allowNull: false,
+        },
+        correo: {
+            type: DataTypes.STRING,
         },
         estado_registro: {
             type: DataTypes.STRING,
@@ -37,7 +42,7 @@ Cliente.init(
     }
 );
 
-//La relacion se entiende como 1 a muchos, es decir, un cliente tiene 1 o muchos vehiculos(hasMany).
-Cliente.hasMany(Vehiculo, {foreignKey: 'cliente_id', as: 'vehiculos'})
+Cliente.hasMany(Usuario, { foreignKey: 'cliente_id' });
+Cliente.hasMany(Reserva, { foreignKey: 'cliente_id' });
 
 module.exports = Cliente;
