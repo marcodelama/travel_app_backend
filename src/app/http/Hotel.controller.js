@@ -29,6 +29,7 @@ const getHoteles = async (req, res) => {
         const result = hoteles.map(hotel => ({
             id: hotel.id,
             nombre: hotel.nombre,
+            descripcion: hotel.descripcion,
             direccion: hotel.direccion,
             valoracion: hotel.valoracion,
             habitaciones: hotel.Habitacions.map(habitacion => ({
@@ -95,6 +96,7 @@ const getHotel = async (req, res) => {
             id: hotel.id,
             nombre: hotel.nombre,
             direccion: hotel.direccion,
+            descripcion: hotel.descripcion,
             valoracion: hotel.valoracion,
             habitaciones: hotel.Habitacions.map(habitacion => ({
                 habitacion_id: habitacion.id,

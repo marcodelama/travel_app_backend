@@ -27,7 +27,6 @@ module.exports = {
         "hotel_id": 2,
         "tipo_id": 3,
         "num_habitacion": 104,
-
       },
       {
         "id": 5,
