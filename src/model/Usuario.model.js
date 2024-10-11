@@ -1,5 +1,6 @@
 const { DataTypes, Model } = require('sequelize');
 const sequelize = require('../config/db');
+const Reserva = require('./Reserva.model');
 
 class Usuario extends Model {}
 
@@ -12,7 +13,6 @@ Usuario.init(
         },
         password: {
             type: DataTypes.STRING,
-            allowNull: false,
         },
         estado_registro: {
             type: DataTypes.STRING,
@@ -24,5 +24,7 @@ Usuario.init(
         modelName: "Usuario",
     }
 );
+
+Usuario.hasMany(Reserva, { foreignKey: 'usuario_id' });
 
 module.exports = Usuario;

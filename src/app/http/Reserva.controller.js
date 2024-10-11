@@ -23,8 +23,7 @@ const monto_total = (reserva) =>
     }, 0);
 
 const createReserva = async (req, res) => {
-    const { fecha_creacion, fechas_inicio, fechas_fin, metodo_pago, habitacion_ids } = req.body; // Cambiado a habitacion_ids
-    const cliente_id = req.user.id;
+    const { fecha_creacion, fechas_inicio, fechas_fin, metodo_pago, habitacion_ids, usuario_id } = req.body; // Cambiado a habitacion_ids
 
     try {
         // Obtener la menor fecha de fechas_inicio
@@ -46,7 +45,7 @@ const createReserva = async (req, res) => {
             metodo_pago,
             fecha_inicio,
             fecha_fin,
-            cliente_id,
+            usuario_id,
             estado
         });
 
@@ -126,10 +125,12 @@ const getReserva = async (req, res) => {
 }
 
 const getReservaIdUsuario = async (req, res) => {
-    const cliente_id = req.user.id
+    const { id } = req.params;
     try {
         const reservas = await Reserva.findAll({
-            where: { cliente_id: cliente_id },
+            where: {
+                usuario_id: id // Filtrar por el id del usuario (cliente_id)
+            },
             include: [{
                 model: Habitacion,
                 atributes: ['id', 'num_habitacion', 'tipo_id', 'hotel_id'],

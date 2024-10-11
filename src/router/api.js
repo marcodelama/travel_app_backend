@@ -24,14 +24,11 @@ router.get('/hotel/:id', hotelController.getHotel)
 
 router.get('/usuarios', usuarioController.getUsuarios)
 
-router.use(authenticateToken);
-
 //Reserva
-router.get('/reservas', reservaController.getReserva)
 router.post('/reserva/create', reservaController.createReserva)
+router.get('/reservas', reservaController.getReserva)
+router.get('/reserva/usuario/:id', reservaController.getReservaIdUsuario)
 
-//Información de usuario
-router.get('/usuario/reservas', reservaController.getReservaIdUsuario)
-
+router.use(authenticateToken);
 
 module.exports = router;

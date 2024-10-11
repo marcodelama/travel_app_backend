@@ -11,7 +11,6 @@ Provincia.init(
     {
         nombre: {
             type: DataTypes.STRING,
-            allowNull: false,
         },
         descripcion: {
             type: DataTypes.TEXT,

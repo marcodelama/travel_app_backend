@@ -21,7 +21,7 @@ const getHoteles = async (req, res) => {
                     attributes: ['id', 'estado', 'num_habitacion', 'reserva_id'], // Selecciona los campos necesarios de Habitacion
                     include: { // Aquí es donde anidas la relación con TipoHabitacion
                         model: TipoHabitacion, // Incluir el modelo TipoHabitacion
-                        attributes: ['id', 'nombre', 'capacidad', 'precio'], // Selecciona los campos necesarios de TipoHabitacion
+                        attributes: ['id', 'nombre', 'capacidad', 'descripcion','precio', 'imagen'], // Selecciona los campos necesarios de TipoHabitacion
                     }
                 }]
         });
@@ -40,8 +40,10 @@ const getHoteles = async (req, res) => {
                 tipo_habitacion: {
                     tipo_id: habitacion.TipoHabitacion.id,
                     nombre: habitacion.TipoHabitacion.nombre,
+                    descripcion: habitacion.TipoHabitacion.descripcion,
                     capacidad: habitacion.TipoHabitacion.capacidad,
-                    precio: habitacion.TipoHabitacion.precio
+                    precio: habitacion.TipoHabitacion.precio,
+                    imagen: habitacion.TipoHabitacion.imagen
                 }
             })),
             ubicacion: {
@@ -80,7 +82,7 @@ const getHotel = async (req, res) => {
                     attributes: ['id', 'estado', 'num_habitacion', 'reserva_id'],
                     include: {
                         model: TipoHabitacion,
-                        attributes: ['id', 'nombre', 'capacidad', 'precio'],
+                        attributes: ['id', 'nombre', 'capacidad', 'descripcion','precio', 'imagen'],
                     }
                 }
             ]
@@ -106,8 +108,10 @@ const getHotel = async (req, res) => {
                 tipo_habitacion: {
                     tipo_id: habitacion.TipoHabitacion.id,
                     nombre: habitacion.TipoHabitacion.nombre,
+                    descripcion: habitacion.TipoHabitacion.descripcion,
                     capacidad: habitacion.TipoHabitacion.capacidad,
-                    precio: habitacion.TipoHabitacion.precio
+                    precio: habitacion.TipoHabitacion.precio,
+                    imagen: habitacion.TipoHabitacion.imagen
                 }
             })),
             ubicacion: {

@@ -14,18 +14,15 @@ Hotel.init(
         },
         nombre: {
             type: DataTypes.STRING,
-            allowNull: false,
         },
         direccion: {
             type: DataTypes.STRING,
-            allowNull: false,
         },
         descripcion: {
             type: DataTypes.STRING,
         },
         valoracion: {
             type: DataTypes.FLOAT,
-            allowNull: false,
             validate: {
                 min: 1,
                 max: 5

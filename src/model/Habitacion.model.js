@@ -8,7 +8,6 @@ Habitacion.init(
     {
         num_habitacion: {
             type: DataTypes.INTEGER,
-            allowNull: false,
         },
         estado: {
             type: DataTypes.INTEGER,

@@ -138,7 +138,7 @@ module.exports = {
         "provincia_id": 14,
         "valoracion": 4,
         "imagen": "https://content.r9cdn.net/rimg/himg/6b/80/1b/expediav2-210435-a71d16-495420.jpg?width=1200&height=630&crop=true",
-        "descriocion": "Hotel Boutique Asunción cuenta con 37 habitaciones insonorizadas, y algunas disponen de ventanas insonorizadas, además de TV de pantalla plana con canales vía satélite y Wi-Fi"
+        "descripcion": "Hotel Boutique Asunción cuenta con 37 habitaciones insonorizadas, y algunas disponen de ventanas insonorizadas, además de TV de pantalla plana con canales vía satélite y Wi-Fi"
       },
       {
         "id": 16,
@@ -282,7 +282,7 @@ module.exports = {
         "provincia_id": 30,
         "valoracion": 3,
         "imagen": "https://images.trvl-media.com/lodging/16000000/15900000/15894100/15894010/a4509171.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill",
-        "descriocion": "Servicios principales. Restaurante y bar; Desayuno disponible; Traslado desde/hacia el aeropuerto; Traslados por la zona; Terraza; Jardín; Biblioteca."
+        "descripcion": "Servicios principales. Restaurante y bar; Desayuno disponible; Traslado desde/hacia el aeropuerto; Traslados por la zona; Terraza; Jardín; Biblioteca."
       },
       {
         "id": 32,

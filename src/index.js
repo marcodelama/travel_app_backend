@@ -4,13 +4,14 @@ require('dotenv').config();
 
 const PORT = process.env.PORT || 4000;
 
-sequelize.sync({ /* force: true */ }).then(() => {
-    console.log('Base de datos sincronizada.');
-  }).catch(err => {
-    console.log('Error al sincronizar la base de datos:', err);
+sequelize.sync({ force: true })
+  .then(() => {
+    console.log('Todas las tablas han sido eliminadas y recreadas.');
+  })
+  .catch(err => {
+    console.error('Hubo un error al sincronizar las tablas:', err);
   });
-  
 
 app.listen(PORT, () => {
-    console.log(`Servidor iniciado en el puerto ${PORT}`);
+  console.log(`Servidor iniciado en el puerto ${PORT}`);
 })

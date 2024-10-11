@@ -11,12 +11,10 @@ Vehiculo.init(
             allowNull: true,
         }, */
         placa: {
-            type: DataTypes.STRING,
-            allowNull: false,
+            type: DataTypes.STRING
         },
         marca: {
             type: DataTypes.STRING,
-            allowNull: false,
         },
         estado_registro: {
             type: DataTypes.STRING,

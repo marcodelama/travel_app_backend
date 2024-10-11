@@ -12,19 +12,15 @@ Empleado.init(
         },
         nombre: {
             type: DataTypes.STRING,
-            allowNull: false,
         },
         apellido: {
             type: DataTypes.STRING,
-            allowNull: false,
         },
         direccion: {
             type: DataTypes.STRING,
-            allowNull: false,
         },
         telefono: {
             type: DataTypes.STRING,
-            allowNull: false,
         },
         salario: {
             type: DataTypes.DOUBLE,

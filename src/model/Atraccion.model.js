@@ -12,7 +12,6 @@ Atraccion.init(
         },
         nombre: {
             type: DataTypes.STRING,
-            allowNull: false,
         },
         descripcion: {
             type: DataTypes.TEXT,
@@ -32,11 +31,9 @@ Atraccion.init(
         },
         horario: {
             type: DataTypes.STRING,
-            allowNull: false
         },
         imagen:{
             type: DataTypes.STRING,
-            allowNull: false
         }
     },
     {

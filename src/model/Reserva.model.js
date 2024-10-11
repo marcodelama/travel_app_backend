@@ -13,7 +13,6 @@ Reserva.init(
         },
         fecha_creacion: {
             type: DataTypes.DATE,
-            allowNull: false,
         },
         fecha_inicio: {
             type: DataTypes.DATE,
